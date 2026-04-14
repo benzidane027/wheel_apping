@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+
+import '../theme.dart';
 
 class LanguageScreen extends StatelessWidget {
   const LanguageScreen({super.key});
 
-  Widget langButton(String text) {
-    return ElevatedButton(onPressed: () {}, child: Text(text));
-  }
-
-  Widget _buildButton(String text) {
+  Widget _buildLanguageButton(String text) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-          elevation: 4,
-          backgroundColor: Colors.green[700],
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          backgroundColor: primaryGreen,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          elevation: 6,
+          shadowColor: primaryGreen.withOpacity(0.35),
         ),
         child: Text(
           text,
-          style: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 18, color: white, fontWeight: FontWeight.w700),
         ),
       ),
     );
@@ -30,53 +28,97 @@ class LanguageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Logo Image
-            Image.asset(
-              'assets/logo.png', // replace with your image path
-              height: 150,
-            ),
-            const SizedBox(height: 20),
-
-            const Text(
-              'Eco-Tire',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.green),
-            ),
-
-            const SizedBox(height: 8),
-
-            const Text(
-              'نشتري العجلات... وأنت تربح',
-              style: TextStyle(fontSize: 16, color: Colors.black54),
-              textAlign: TextAlign.center,
-            ),
-
-            const SizedBox(height: 40),
-
-            Container(
-              padding: const EdgeInsets.all(16),
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, 5)),
-                ],
-              ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFF7FBF7), Color(0xFFEAF3E8)],
+          ),
+        ),
+        child: SafeArea(
+          child: Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  _buildButton('العربية'),
-                  const SizedBox(height: 12),
-                  _buildButton('English'),
-                  const SizedBox(height: 12),
-                  _buildButton('Français'),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 22),
+                    decoration: BoxDecoration(
+                      color: white,
+                      borderRadius: BorderRadius.circular(32),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.08),
+                          blurRadius: 26,
+                          offset: const Offset(0, 14),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 120,
+                          height: 120,
+                          decoration: BoxDecoration(
+                            color: white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: primaryGreen.withOpacity(0.2),
+                                blurRadius: 22,
+                                offset: const Offset(0, 10),
+                              ),
+                            ],
+                          ),
+                          child: const Icon(Icons.local_shipping, size: 64, color: primaryGreen),
+                        ),
+                        const SizedBox(height: 18),
+                        const Text(
+                          'Eco-Tire',
+                          style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: softBlack),
+                        ),
+                        const SizedBox(height: 10),
+                        const Text(
+                          'نشتري العجلات... وأنت تربح',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 16, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 36),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 18),
+                    decoration: BoxDecoration(
+                      color: white,
+                      borderRadius: BorderRadius.circular(28),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.08),
+                          blurRadius: 22,
+                          offset: const Offset(0, 12),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _buildLanguageButton('العربية'),
+                        const SizedBox(height: 14),
+                        _buildLanguageButton('English'),
+                        const SizedBox(height: 14),
+                        _buildLanguageButton('Français'),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

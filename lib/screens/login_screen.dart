@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
             TextButton(onPressed: () {}, child: const Text("Forgot Password?")),
             TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => const RegisterScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (_) => RegisterScreen()));
               },
               child: const Text("Register Now"),
             ),

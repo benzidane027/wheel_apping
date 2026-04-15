@@ -75,9 +75,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 40),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.local_shipping, size: 72, color: primaryGreen),
-                      SizedBox(height: 16),
+                    children: [
+                      Image.asset('asset/img.png', width: 120),
+                      const SizedBox(height: 16),
                       Text(
                         'Eco-Tire',
                         style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: softBlack),

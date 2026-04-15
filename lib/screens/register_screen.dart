@@ -16,7 +16,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           // Background Image
           SizedBox.expand(
             child: Image.asset(
-              "assets/bg.jpg", // replace with your image
+              "asset/img5.png", // replace with your image
               fit: BoxFit.cover,
             ),
           ),
@@ -33,10 +33,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Column(
                     children: [
                       Image.asset(
-                        "assets/logo.png", // your logo
+                        "asset/img.png", // your logo
                         height: 100,
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         "Eco-Tire",
                         style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.green.shade700),

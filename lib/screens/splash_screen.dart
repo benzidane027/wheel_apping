@@ -33,10 +33,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           duration: const Duration(seconds: 2),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              FlutterLogo(size: 150),
-              SizedBox(height: 20),
-              Text("نشتري العجلات ... وأنت تربح", style: TextStyle(fontSize: 22)),
+            children: [
+              Image.asset('asset/img.png', width: 180),
+              const SizedBox(height: 30),
+              Image.asset('asset/img2.png', height: 40),
             ],
           ),
         ),

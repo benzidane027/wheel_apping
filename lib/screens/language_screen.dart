@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
+import 'citizen_home.dart';
 
 class LanguageScreen extends StatelessWidget {
   const LanguageScreen({super.key});
 
-  Widget _buildLanguageButton(String text) {
+  Widget _buildLanguageButton(String text, {VoidCallback? onPressed}) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed ?? () {},
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 16),
           backgroundColor: primaryGreen,
@@ -110,7 +111,13 @@ class LanguageScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        _buildLanguageButton('العربية'),
+                        _buildLanguageButton(
+                          'العربية',
+                          onPressed: () => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (_) => const CitizenHome()),
+                          ),
+                        ),
                         const SizedBox(height: 14),
                         _buildLanguageButton('English'),
                         const SizedBox(height: 14),

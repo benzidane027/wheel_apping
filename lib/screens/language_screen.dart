@@ -70,6 +70,9 @@ class LanguageScreen extends StatelessWidget {
                                 color: primaryGreen.withOpacity(0.2),
                                 blurRadius: 22,
                                 offset: const Offset(0, 10),
+                              ),
+                            ],
+                          ),
                           child: Padding(
                             padding: const EdgeInsets.all(12),
                             child: Image.asset('asset/img.png', width: 64),

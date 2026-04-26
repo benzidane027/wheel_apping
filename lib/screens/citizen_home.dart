@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
+import 'login_screen.dart';
 
 class CitizenHome extends StatefulWidget {
   const CitizenHome({super.key});
@@ -54,7 +55,15 @@ class _CitizenHomeState extends State<CitizenHome> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _buildCircleIconButton(Icons.arrow_back),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (_) => const LoginScreen()),
+                          );
+                        },
+                        child: _buildCircleIconButton(Icons.arrow_back),
+                      ),
                       _buildCircleIconButton(Icons.notifications),
                       _buildCircleIconButton(Icons.recycling),
                     ],

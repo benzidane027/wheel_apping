@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -140,7 +141,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         SizedBox(height: 10),
 
                         // Footer
-                        Text("هل لديك حساب بالفعل؟ تسجيل الدخول", style: TextStyle(color: Colors.grey)),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => const LoginScreen()),
+                            );
+                          },
+                          child: Text("هل لديك حساب بالفعل؟ تسجيل الدخول", style: TextStyle(color: Colors.grey)),
+                        ),
                       ],
                     ),
                   ),

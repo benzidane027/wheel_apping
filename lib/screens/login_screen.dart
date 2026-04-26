@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../theme.dart';
 import 'register_screen.dart';
 import 'citizen_home.dart';
@@ -66,9 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                       decoration: BoxDecoration(color: primaryGreen, borderRadius: BorderRadius.circular(30)),
-                      child: const Text(
-                        'ربح الوقت',
-                        style: TextStyle(color: white, fontWeight: FontWeight.w600),
+                      child: Text(
+                        'gain_time'.tr(),
+                        style: const TextStyle(color: white, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -79,14 +80,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       Image.asset('asset/img.png', width: 120),
                       const SizedBox(height: 16),
                       Text(
-                        'Eco-Tire',
-                        style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: softBlack),
+                        'eco_tire'.tr(),
+                        style: const TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: softBlack),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
-                        'الدخول إلى منظومة الإطارات الصديقة للبيئة',
+                        'login_subtitle'.tr(),
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 15, color: Colors.black54),
+                        style: const TextStyle(fontSize: 15, color: Colors.black54),
                       ),
                     ],
                   ),
@@ -107,24 +108,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const Text(
-                          'تسجيل الدخول',
+                        Text(
+                          'login_title'.tr(),
                           textAlign: TextAlign.right,
-                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 14),
                         _buildInputField(
                           controller: phoneController,
                           label: '+213',
-                          hint: 'رقم الهاتف',
+                          hint: 'phone_number'.tr(),
                           icon: Icons.phone,
                           keyboardType: TextInputType.phone,
                         ),
                         const SizedBox(height: 14),
                         _buildInputField(
                           controller: passwordController,
-                          label: 'كلمة المرور',
-                          hint: 'أدخل كلمة المرور',
+                          label: 'password'.tr(),
+                          hint: 'enter_password'.tr(),
                           icon: Icons.lock,
                           obscureText: !showPassword,
                           suffixIcon: IconButton(
@@ -143,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: TextButton(
                             onPressed: () {},
                             style: TextButton.styleFrom(foregroundColor: primaryGreen),
-                            child: const Text('نسيت كلمة المرور؟'),
+                            child: Text('forgot_password'.tr()),
                           ),
                         ),
                         const SizedBox(height: 12),
@@ -158,9 +159,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
                               elevation: 0,
                             ),
-                            child: const Text(
-                              'تسجيل الدخول',
-                              style: TextStyle(fontSize: 18, color: white, fontWeight: FontWeight.w600),
+                            child: Text(
+                              'login_button'.tr(),
+                              style: const TextStyle(fontSize: 18, color: white, fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),
@@ -171,13 +172,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('ليس لديك حساب؟', style: TextStyle(color: Colors.black54)),
+                      Text('no_account'.tr(), style: const TextStyle(color: Colors.black54)),
                       TextButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (_) => RegisterScreen()));
                         },
                         style: TextButton.styleFrom(foregroundColor: primaryGreen),
-                        child: const Text('سجل الآن'),
+                        child: Text('register_now'.tr()),
                       ),
                     ],
                   ),

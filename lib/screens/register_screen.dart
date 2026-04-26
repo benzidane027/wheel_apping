@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -39,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        "Eco-Tire",
+                        'eco_tire'.tr(),
                         style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.green.shade700),
                       ),
                     ],
@@ -78,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        "أفراد",
+                                        'individuals'.tr(),
                                         style: TextStyle(color: isIndividual ? Colors.white : Colors.black),
                                       ),
                                     ),
@@ -98,7 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        "شركة",
+                                        'company'.tr(),
                                         style: TextStyle(color: !isIndividual ? Colors.white : Colors.black),
                                       ),
                                     ),
@@ -112,10 +113,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         SizedBox(height: 20),
 
                         // Input fields
-                        buildTextField("الاسم الكامل", Icons.person),
-                        buildTextField("البريد الإلكتروني", Icons.email),
-                        buildTextField("كلمة المرور", Icons.lock, obscure: true),
-                        buildTextField("تأكيد كلمة المرور", Icons.lock, obscure: true),
+                        buildTextField('full_name'.tr(), Icons.person),
+                        buildTextField('email'.tr(), Icons.email),
+                        buildTextField('password'.tr(), Icons.lock, obscure: true),
+                        buildTextField('confirm_password'.tr(), Icons.lock, obscure: true),
 
                         SizedBox(height: 20),
 
@@ -134,7 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                             ),
                             onPressed: () {},
-                            child: Text("تسجيل الآن", style: TextStyle(fontSize: 16)),
+                            child: Text('register_now'.tr(), style: const TextStyle(fontSize: 16)),
                           ),
                         ),
 
@@ -148,7 +149,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               MaterialPageRoute(builder: (_) => const LoginScreen()),
                             );
                           },
-                          child: Text("هل لديك حساب بالفعل؟ تسجيل الدخول", style: TextStyle(color: Colors.grey)),
+                          child: Text('already_have_account'.tr(), style: const TextStyle(color: Colors.grey)),
                         ),
                       ],
                     ),

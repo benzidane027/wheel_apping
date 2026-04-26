@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import '../theme.dart';
 import 'login_screen.dart';
 
@@ -101,10 +101,10 @@ class _CitizenHomeState extends State<CitizenHome> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildNavItem(Icons.home, 'الرئيسية', 0),
-            _buildNavItem(Icons.location_on, 'العنوان', 1),
-            _buildNavItem(Icons.add_circle_outline, 'إضافة', 2),
-            _buildNavItem(Icons.person, 'الملف الشخصي', 3),
+            _buildNavItem(Icons.home, 'home'.tr(), 0),
+            _buildNavItem(Icons.location_on, 'address'.tr(), 1),
+            _buildNavItem(Icons.add_circle_outline, 'add'.tr(), 2),
+            _buildNavItem(Icons.person, 'profile'.tr(), 3),
           ],
         ),
       ),
@@ -138,10 +138,10 @@ class _CitizenHomeState extends State<CitizenHome> {
             children: [
               Image.asset('asset/img.png', width: 44),
               const SizedBox(width: 12),
-              const Expanded(
+              Expanded(
                 child: Text(
-                  'Eco-Tire',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: softBlack),
+                  'eco_tire'.tr(),
+                  style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: softBlack),
                 ),
               ),
             ],
@@ -151,12 +151,12 @@ class _CitizenHomeState extends State<CitizenHome> {
             alignment: Alignment.centerRight,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: const [
-                Text('مرحبا بكم', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                SizedBox(height: 6),
-                Text('محمد عبدالله', style: TextStyle(fontSize: 16, color: Colors.black54)),
-                SizedBox(height: 2),
-                Text('مواطن', style: TextStyle(fontSize: 14, color: Colors.black45)),
+              children: [
+                Text('welcome'.tr(), style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 6),
+                const Text('محمد عبدالله', style: TextStyle(fontSize: 16, color: Colors.black54)),
+                const SizedBox(height: 2),
+                Text('citizen'.tr(), style: const TextStyle(fontSize: 14, color: Colors.black45)),
               ],
             ),
           ),
@@ -181,16 +181,16 @@ class _CitizenHomeState extends State<CitizenHome> {
               color: primaryGreen,
               borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
             ),
-            child: const Text(
-              'معلومات البيع',
+            child: Text(
+              'sales_info'.tr(),
               textAlign: TextAlign.right,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: white),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: white),
             ),
           ),
           _buildInfoRow(
             icon: Icons.camera_alt,
-            title: 'التقاط صورة',
-            subtitle: 'قم برفع صورة العجلات',
+            title: 'take_picture'.tr(),
+            subtitle: 'upload_wheels_picture'.tr(),
             trailing: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(color: primaryGreen.withOpacity(0.12), shape: BoxShape.circle),
@@ -202,8 +202,8 @@ class _CitizenHomeState extends State<CitizenHome> {
           const Divider(height: 1, indent: 18, endIndent: 18),
           _buildInfoRow(
             icon: Icons.calendar_today,
-            title: 'تحديد وقت التسليم',
-            subtitle: 'الثلاثاء، 30 أبريل، 2024',
+            title: 'select_delivery_time'.tr(),
+            subtitle: 'delivery_time_example'.tr(),
             trailing: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(color: primaryGreen.withOpacity(0.12), shape: BoxShape.circle),
@@ -222,9 +222,9 @@ class _CitizenHomeState extends State<CitizenHome> {
                   backgroundColor: primaryGreen,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
                 ),
-                child: const Text(
-                  'تأكيد البيع',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: white),
+                child: Text(
+                  'confirm_sale'.tr(),
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: white),
                 ),
               ),
             ),
@@ -255,10 +255,10 @@ class _CitizenHomeState extends State<CitizenHome> {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text('موقع الشركة', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16)),
-                    SizedBox(height: 6),
-                    Text('Eco-Tire Company, 12 شارع الصناعة 12', style: TextStyle(color: Colors.black54)),
+                  children: [
+                    Text('company_location'.tr(), style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16)),
+                    const SizedBox(height: 6),
+                    Text('company_address'.tr(), style: const TextStyle(color: Colors.black54)),
                   ],
                 ),
               ),
@@ -285,7 +285,7 @@ class _CitizenHomeState extends State<CitizenHome> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Text(
-                'طن',
+                'ton'.tr(),
                 style: TextStyle(color: useTon ? white : softBlack, fontWeight: FontWeight.w600),
               ),
             ),
@@ -299,7 +299,7 @@ class _CitizenHomeState extends State<CitizenHome> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Text(
-                'كيلوغرام',
+                'kilogram'.tr(),
                 style: TextStyle(color: !useTon ? white : softBlack, fontWeight: FontWeight.w600),
               ),
             ),
@@ -360,8 +360,8 @@ class _CitizenHomeState extends State<CitizenHome> {
           SizedBox(width: 14),
           Expanded(
             child: Text(
-              'يجب أكمال المعلومات التالية: تكمل مفقود • تحدد موعد التسليم',
-              style: TextStyle(color: Color(0xFF5E4B2B), fontSize: 14),
+              'warning_incomplete_info'.tr(),
+              style: const TextStyle(color: Color(0xFF5E4B2B), fontSize: 14),
             ),
           ),
         ],

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../theme.dart';
-import 'citizen_home.dart';
+import '../theme.dart';
+import 'login_screen.dart';
 
 class LanguageScreen extends StatelessWidget {
   const LanguageScreen({super.key});
@@ -80,13 +82,13 @@ class LanguageScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 18),
-                        const Text(
-                          'Eco-Tire',
-                          style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: softBlack),
+                        Text(
+                          'eco_tire'.tr(),
+                          style: const TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: softBlack),
                         ),
                         const SizedBox(height: 10),
-                        const Text(
-                          'نشتري العجلات... وأنت تربح',
+                        Text(
+                          'app_subtitle'.tr(),
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 16, color: Colors.black54),
                         ),
@@ -112,16 +114,37 @@ class LanguageScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         _buildLanguageButton(
-                          'العربية',
-                          onPressed: () => Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(builder: (_) => const CitizenHome()),
-                          ),
+                          'arabic'.tr(),
+                          onPressed: () {
+                            context.setLocale(const Locale('ar'));
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => const LoginScreen()),
+                            );
+                          },
                         ),
                         const SizedBox(height: 14),
-                        _buildLanguageButton('English'),
+                        _buildLanguageButton(
+                          'english'.tr(),
+                          onPressed: () {
+                            context.setLocale(const Locale('en'));
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => const LoginScreen()),
+                            );
+                          },
+                        ),
                         const SizedBox(height: 14),
-                        _buildLanguageButton('Français'),
+                        _buildLanguageButton(
+                          'french'.tr(),
+                          onPressed: () {
+                            context.setLocale(const Locale('fr'));
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => const LoginScreen()),
+                            );
+                          },
+                        ),
                       ],
                     ),
                   ),

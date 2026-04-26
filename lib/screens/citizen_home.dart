@@ -136,7 +136,7 @@ class _CitizenHomeState extends State<CitizenHome> {
         children: [
           Row(
             children: [
-              Image.asset('asset/img.png', width: 44),
+              Image.asset('assets/images/img.png', width: 44),
               const SizedBox(width: 12),
               Expanded(
                 child: Text(

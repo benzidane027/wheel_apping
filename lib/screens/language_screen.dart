@@ -78,7 +78,7 @@ class LanguageScreen extends StatelessWidget {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(12),
-                            child: Image.asset('asset/img.png', width: 64),
+                            child: Image.asset('assets/images/img.png', width: 64),
                           ),
                         ),
                         const SizedBox(height: 18),

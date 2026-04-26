@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset('asset/img.png', width: 120),
+                      Image.asset('assets/images/img.png', width: 120),
                       const SizedBox(height: 16),
                       Text(
                         'eco_tire'.tr(),

@@ -18,7 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           // Background Image
           SizedBox.expand(
             child: Image.asset(
-              "asset/img5.png", // replace with your image
+              "assets/images/img5.png", // replace with your image
               fit: BoxFit.cover,
             ),
           ),
@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Column(
                     children: [
                       Image.asset(
-                        "asset/img.png", // your logo
+                        "assets/images/img.png", // your logo
                         height: 100,
                       ),
                       const SizedBox(height: 10),

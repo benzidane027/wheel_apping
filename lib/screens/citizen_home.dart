@@ -355,7 +355,7 @@ class _CitizenHomeState extends State<CitizenHome> {
         border: Border.all(color: const Color(0xFFF5D1A7)),
       ),
       child: Row(
-        children: const [
+        children:  [
           Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 28),
           SizedBox(width: 14),
           Expanded(
